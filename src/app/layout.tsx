@@ -24,29 +24,25 @@ const cormorantGaramond = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mainline - Modern Next.js Template",
-    template: "%s | Mainline",
+    default: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
+    template: "%s - P | L",
   },
   description:
-    "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+    "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
   keywords: [
-    "Next.js",
-    "nextjs template",
-    "nextjs theme",
-    "nextjs starter",
-    "shadcn template",
-    "shadcn theme",
-    "shadcn starter",
-    "tailwind template",
-    "tailwind theme",
-    "tailwind starter",
-    "mdx template",
-    "mdx theme",
-    "mdx starter",
+    "Wedding",
+    "Seville",
+    "Palina",
+    "Lukas",
+    "celebration",
+    "love",
+    "memories",
+    "Special day",
+    "Villa Luisa",
   ],
-  authors: [{ name: "shadcnblocks.com" }],
-  creator: "shadcnblocks.com",
-  publisher: "shadcnblocks.com",
+  authors: [{ name: "Palina & Lukas" }],
+  creator: "Palina & Lukas",
+  publisher: "Palina & Lukas",
   robots: {
     index: true,
     follow: true,
@@ -63,24 +59,24 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Mainline - Modern Next.js Template",
+    title: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
-    siteName: "Mainline",
+      "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
+    siteName: "Palina ∞ Lukas",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mainline - Modern Next.js Template",
+        alt: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mainline - Modern Next.js Template",
+    title: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+      "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
     images: ["/og-image.jpg"],
     creator: "@ausrobdev",
   },
@@ -100,7 +96,9 @@ export default function RootLayout({
           src="https://tweakcn.com/live-preview.min.js"
         />
       </head>
-      <body className={`${pinyonScript.variable} ${cormorantGaramond.variable} antialiased`}>
+      <body
+        className={`${pinyonScript.variable} ${cormorantGaramond.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
