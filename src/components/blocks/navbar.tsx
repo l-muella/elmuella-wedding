@@ -159,6 +159,14 @@ export const Navbar = () => {
         )}
       >
         <nav className="divide-border flex flex-1 flex-col divide-y">
+          {/* Select Menu Button - Mobile */}
+          <div className="pb-4 first:pt-0">
+            <Link href="/menu" onClick={() => setIsMenuOpen(false)}>
+              <Button variant="outline" className="w-full">
+                <span className="relative z-10">Select Menu</span>
+              </Button>
+            </Link>
+          </div>
           {ITEMS.map((link) =>
             link.dropdownItems ? (
               <div key={link.label} className="py-4 first:pt-0 last:pb-0">
