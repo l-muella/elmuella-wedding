@@ -1,10 +1,7 @@
 import Image from "next/image";
 
-import { ArrowRight } from "lucide-react";
-
 import { DashedLine } from "../dashed-line";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -17,60 +14,94 @@ import { cn } from "@/lib/utils";
 
 const items = [
   {
-    quote: "We're misusing Mainline as a CRM and it still works!",
-    author: "Amy Chase",
-    role: "PM",
-    company: "Mercury Finance",
-    image: "/testimonials/amy-chase.webp",
+    quote: "Visiting the Grand Mosque during Ramadan.",
+    city: "Abu Dhabi",
+    image: "/testimonials/abu-dhabi.jpg",
   },
   {
-    quote: "I was able to replace 80% of my team with Mainline bots.",
-    author: "Jonas Kotara",
-    role: "Lead Engineer",
-    company: "Mercury Finance",
-    image: "/testimonials/jonas-kotara.webp",
+    quote: "Exploring Maldives and the underwater wonderland.",
+    city: "Maledives",
+    image: "/testimonials/malediven.jpg",
   },
   {
-    quote: "Founder Mode is hard enough without having a really nice PM app.",
-    author: "Kevin Yam",
-    role: "Founder",
-    company: "Mercury Finance",
-    image: "/testimonials/kevin-yam.webp",
+    quote: "Romantic canoe rides through Venice’s canals.",
+    city: "Venice",
+    image: "/testimonials/venedig.jpg",
   },
   {
-    quote: "I can use the tool as a substitute from my PM.",
-    author: "Kundo Marta",
-    role: "Founder",
-    company: "Mercury Finance",
-    image: "/testimonials/kundo-marta.webp",
+    quote: "Lukas’s journey to Belarus meeting Palina’s family.",
+    city: "Belarus",
+    image: "/testimonials/belarus.jpg",
   },
   {
-    quote: "We're misusing Mainline as a CRM and it still works!",
-    author: "Amy Chase",
-    role: "PM",
-    company: "Mercury Finance",
-    image: "/testimonials/amy-chase.webp",
+    quote: "Celebrating New Year’s Eve in Tulum.",
+    city: "Mexico",
+    image: "/testimonials/rsvp-mexiko.jpg",
   },
   {
-    quote: "I was able to replace 80% of my team with Mainline bots.",
-    author: "Jonas Kotara",
-    role: "Lead Engineer",
-    company: "Mercury Finance",
-    image: "/testimonials/jonas-kotara.webp",
+    quote: "Summer days at our favorite spot in Austria.",
+    city: "Landhaus zu Appesbach",
+    image: "/testimonials/wolfgangsee.jpg",
   },
   {
-    quote: "Founder Mode is hard enough without having a really nice PM app.",
-    author: "Kevin Yam",
-    role: "Founder",
-    company: "Mercury Finance",
-    image: "/testimonials/kevin-yam.webp",
+    quote: "Living the Vienna life, dancing at the balls.",
+    city: "Vienna",
+    image: "/testimonials/ball.jpg",
   },
   {
-    quote: "I can use the tool as a substitute from my PM.",
-    author: "Kundo Marta",
-    role: "Founder",
-    company: "Mercury Finance",
-    image: "/testimonials/kundo-marta.webp",
+    quote: "Learning kite-surfing on our yacht adventure in Egypt.",
+    city: "Egypt",
+    image: "/testimonials/yacht.jpg",
+  },
+  {
+    quote: "Dressing up for Halloween parties.",
+    city: "Vienna",
+    image: "/testimonials/halloween.jpg",
+  },
+  {
+    quote: "Escaping for a relaxing retreat weekend in Pogush.",
+    city: "Pogusch",
+    image: "/testimonials/pogusch.jpg",
+  },
+  {
+    quote: "Savoring wine and maroni in South Styria.",
+    city: "South Styria",
+    image: "/testimonials/wine-yard.jpg",
+  },
+  {
+    quote: "Teaching Palina to ski and to après-ski.",
+    city: "Kitzbühel",
+    image: "/testimonials/skiing.jpg",
+  },
+  {
+    quote: "Going for a walk with our hot dog.",
+    city: "Vienna",
+    image: "/testimonials/love-in-vienna.jpg",
+  },
+  {
+    quote: "Spa getaways and relaxing facial treatments.",
+    city: "Bad Hofgastein",
+    image: "/testimonials/spa.jpg",
+  },
+  {
+    quote: "Growing older while enjoying classical concerts together.",
+    city: "Concert Hall",
+    image: "/testimonials/concert.jpg",
+  },
+  {
+    quote: "Wanderlust adventures around the world.",
+    city: "Schafberg",
+    image: "/testimonials/wanderlust.jpg",
+  },
+  {
+    quote: "Romantic rooftop moments with stunning city views.",
+    city: "Vienna",
+    image: "/testimonials/rooftop-love.jpg",
+  },
+  {
+    quote: "Christmas magic with our little family.",
+    city: "Home",
+    image: "/testimonials/xmas.jpg",
   },
 ];
 
@@ -83,23 +114,23 @@ export const Testimonials = ({
 }) => {
   return (
     <>
-      <section className={cn("overflow-hidden py-28 lg:py-32", className)}>
+      <section className={cn("overflow-hidden pt-20 lg:pt-24", className)}>
         <div className="container">
           <div className="space-y-4">
-            <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-              Trusted by product builders
+            <h2 className="text-4xl font-light tracking-tight md:text-4xl lg:text-5xl">
+              Gallery of Happiness
             </h2>
             <p className="text-muted-foreground max-w-md leading-snug">
-              Mainline is built on the habits that make the best product teams
-              successful: staying focused, moving quickly, and always aiming for
-              high-quality work.
+              Moments captured throughout our journey together - from our first
+              adventures in Vienna to sunny days in Seville, and all the
+              beautiful memories in between.
             </p>
-            <Button variant="outline" className="shadow-md">
+            {/* <Button variant="outline" className="shadow-md">
               Read our Customer Stories <ArrowRight className="size-4" />
-            </Button>
+            </Button> */}
           </div>
 
-          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-20">
+          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
             <Carousel
               opts={{
                 align: "start",
@@ -118,21 +149,18 @@ export const Testimonials = ({
                         <div className="relative h-[288px] lg:h-[328px]">
                           <Image
                             src={testimonial.image}
-                            alt={testimonial.author}
+                            alt={testimonial.city}
                             fill
                             className="object-cover object-top"
                           />
                         </div>
                         <div className="flex flex-1 flex-col justify-between gap-10 p-6">
-                          <blockquote className="font-display text-lg leading-none! font-medium md:text-xl lg:text-2xl">
+                          <blockquote className="text-lg leading-none! font-medium md:text-xl lg:text-2xl">
                             {testimonial.quote}
                           </blockquote>
                           <div className="space-y-0.5">
-                            <div className="text-primary font-semibold">
-                              {testimonial.author}, {testimonial.role}
-                            </div>
-                            <div className="text-muted-foreground text-sm">
-                              {testimonial.company}
+                            <div className="text-muted-foreground font-cormorant text-xl">
+                              {testimonial.city}
                             </div>
                           </div>
                         </div>

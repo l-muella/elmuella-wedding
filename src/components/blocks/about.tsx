@@ -6,45 +6,82 @@ import { cn } from "@/lib/utils";
 
 const About = () => {
   return (
-    <section className="container mt-10 flex max-w-5xl flex-col-reverse gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row lg:items-end">
-      {/* Images Left - Text Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
+    <section className="container mt-10 flex max-w-5xl flex-col gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row">
+      {/* Mobile order: 1 */}
+      <div className="lg:hidden">
         <ImageSection
-          images={[
-            { src: "/about/1.webp", alt: "Team collaboration" },
-            { src: "/about/2.webp", alt: "Team workspace" },
-          ]}
-          className="xl:-translate-x-10"
-        />
-
-        <TextSection
-          title="The team"
-          paragraphs={[
-            "We started building Mainline in 2019 and launched in 2022. Every endpoint has been designed from the ground up — with no technical debt or legacy systems. We are purpose-built to power project management innovation for the next hundred years.",
-            "We are 100% founder and team-owned, profitable, and we keep our team lean. Over time, this page will become more polished, but for now, we're focused on delivering for developers.",
-            "If you're interested in building the future of PM, check out our open roles below.",
-          ]}
-          ctaButton={{
-            href: "/careers",
-            text: "View open roles",
-          }}
+          src="/about/our-story-london.jpg"
+          alt="Our journey together"
+          aspectRatio="aspect-[2/2]"
         />
       </div>
 
-      {/* Text Left - Images Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
+      {/* Mobile order: 2 */}
+      <div className="lg:hidden">
         <TextSection
+          title="The Proposal"
           paragraphs={[
-            "At Mainline, we are dedicated to transforming the way teams plan, execute, and deliver projects. Our mission is to provide our customers with an unbeatable edge over delays, inefficiencies, and disorganisation through actionable insights and seamless collaboration. We'll stop at nothing to give you the tools you need to get every project across the finish line.",
-            "We're customer-obsessed — investing the time to understand every aspect of your workflow so that we can help you operate better than ever before. We're all in this together because your success is our success. In our history as a company, we've never lost a customer, because when your projects succeed, so do we.",
+            "On 01.04.2025, Palina officially received her Austrian passport which meant one very important thing: no more visa stress. Lukas decided this milestone deserved a proper celebration and surprised her with a trip to London - the city she could now visit without paperwork drama.",
+            "On a sunny April day, they watched The Lion King musical, strolled through the city, and did some enthusiastic bar hopping before heading to what Palina thought was just a “nice dinner.” Instead, they were led into a private space styled like a cozy English living room, complete with a fireplace and champagne waiting.",
+            "Still thinking it was simply a very well-planned surprise, Palina was completely caught off guard when Lukas suddenly got down on one knee. Plot twist: it wasn’t just a trip. She said yes.",
+          ]}
+        />
+      </div>
+
+      {/* Desktop left column */}
+      <div className="hidden flex-col gap-8 lg:flex lg:gap-16 xl:gap-20">
+        <ImageSection
+          src="/about/our-story-london.jpg"
+          alt="Our journey together"
+          className="xl:-translate-x-10"
+          aspectRatio="aspect-[2/2]"
+        />
+        <TextSection
+          title="Why Seville?"
+          paragraphs={[
+            "One of our first vacations together took us to Andalusia. We flew to Málaga, spent wonderful days in Marbella, and then rented a car to explore the famous white villages of southern Spain. Driving through winding roads and sun-drenched hills, we discovered breathtaking places like Ronda, which completely stole our hearts.",
+            "From there, we continued to Granada, standing in awe before the Alhambra, and later to Cádiz, where European charm meets strong Arabic influence. But when we finally arrived in sunny Seville. The warm air, the sound of flamenco in the streets, the incredible food, and the stunning architecture... We didn’t just like it. We fell in love with it.",
+            "And somehow, Seville became part of our story.",
+          ]}
+        />
+      </div>
+
+      {/* Mobile order: 3 */}
+      <div className="lg:hidden">
+        <ImageSection
+          src="/about/holiday-sevilla.jpg"
+          alt="Our special moments"
+          aspectRatio="aspect-[2/2]"
+        />
+      </div>
+
+      {/* Desktop right column */}
+      <div className="hidden flex-col gap-8 lg:flex lg:gap-16 xl:gap-20">
+        <TextSection
+          title="The Proposal"
+          paragraphs={[
+            "On 01.04.2025, Palina officially received her Austrian passport which meant one very important thing: no more visa stress. Lukas decided this milestone deserved a proper celebration and surprised her with a trip to London - the city she could now visit without paperwork drama.",
+            "On a sunny April day, they watched The Lion King musical, strolled through the city, and did some enthusiastic bar hopping before heading to what Palina thought was just a “nice dinner.” Instead, they were led into a private space styled like a cozy English living room, complete with a fireplace and champagne waiting.",
+            "Still thinking it was simply a very well-planned surprise, Palina was completely caught off guard when Lukas suddenly got down on one knee. Plot twist: it wasn’t just a trip. She said yes.",
           ]}
         />
         <ImageSection
-          images={[
-            { src: "/about/3.webp", alt: "Modern workspace" },
-            { src: "/about/4.webp", alt: "Team collaboration" },
+          src="/about/holiday-sevilla.jpg"
+          alt="Our special moments"
+          className="xl:translate-x-10"
+          aspectRatio="aspect-[2/2]"
+        />
+      </div>
+
+      {/* Mobile order: 4 */}
+      <div className="lg:hidden">
+        <TextSection
+          title="Why Seville?"
+          paragraphs={[
+            "One of our first vacations together took us to Andalusia. We flew to Málaga, spent wonderful days in Marbella, and then rented a car to explore the famous white villages of southern Spain. Driving through winding roads and sun-drenched hills, we discovered breathtaking places like Ronda, which completely stole our hearts.",
+            "From there, we continued to Granada, standing in awe before the Alhambra, and later to Cádiz, where European charm meets strong Arabic influence. But when we finally arrived in sunny Seville. The warm air, the sound of flamenco in the streets, the incredible food, and the stunning architecture... We didn’t just like it. We fell in love with it.",
+            "And somehow, Seville became part of our story.",
           ]}
-          className="hidden lg:flex xl:translate-x-10"
         />
       </div>
     </section>
@@ -54,26 +91,23 @@ const About = () => {
 export default About;
 
 interface ImageSectionProps {
-  images: { src: string; alt: string }[];
+  src: string;
+  alt: string;
   className?: string;
+  aspectRatio?: string;
 }
 
-export function ImageSection({ images, className }: ImageSectionProps) {
+export function ImageSection({
+  src,
+  alt,
+  className,
+  aspectRatio = "aspect-[2/1.5]",
+}: ImageSectionProps) {
   return (
     <div className={cn("flex flex-col gap-6", className)}>
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className="relative aspect-[2/1.5] overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-          />
-        </div>
-      ))}
+      <div className={cn("relative overflow-hidden rounded-2xl", aspectRatio)}>
+        <Image src={src} alt={alt} fill className={cn("object-cover")} />
+      </div>
     </div>
   );
 }
@@ -94,7 +128,9 @@ export function TextSection({
 }: TextSectionProps) {
   return (
     <section className="flex-1 space-y-4 text-lg md:space-y-6">
-      {title && <h2 className="text-foreground text-4xl">{title}</h2>}
+      {title && (
+        <h2 className="text-foreground text-4xl font-light">{title}</h2>
+      )}
       <div className="text-muted-foreground max-w-xl space-y-6">
         {paragraphs.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>

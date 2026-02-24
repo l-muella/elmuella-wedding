@@ -9,42 +9,45 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const items = [
   {
-    title: "Purpose-built for product development",
-    image: "/features/triage-card.svg",
+    title: "Story of Palina & Lukas",
+    image: "/features/our-story-london.jpg",
+    url: "/about",
   },
   {
-    title: "Manage projects end-to-end",
-    image: "/features/cycle-card.svg",
+    title: "The Venue - Villa Luisa",
+    image: "/features/villa-luisa.jpg",
+    url: "/venue",
   },
   {
-    title: "Build momentum and healthy habits",
-    image: "/features/overview-card.svg",
+    title: "Accommodations",
+    image: "/features/alfonso-xiii.jpg",
+    url: "/accommodation",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="feature-modern-teams" className="pb-28 lg:pb-32">
+    <section id="feature-modern-teams" className="pb-28 lg:pb-24">
       <div className="container">
         {/* Top dashed line with text */}
-        <div className="relative flex items-center justify-center">
+        {/* <div className="relative flex items-center justify-center">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-muted text-muted-foreground absolute px-3 font-mono text-sm font-medium tracking-wide max-md:hidden">
             MEASURE TWICE. CUT ONCE.
           </span>
-        </div>
+        </div> */}
 
         {/* Content */}
-        <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
+        {/* <div className="mx-auto grid max-w-4xl items-center gap-3 md:gap-0 lg:grid-cols-2">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Made for modern product teams
+            More details about our special day
           </h2>
-          <p className="text-muted-foreground leading-snug">
-            Mainline is built on the habits that make the best product teams
-            successful: staying focused, moving quickly, and always aiming for
-            high-quality work.
+          <p className="text-muted-foreground leading-snug text-xl">
+            We are so excited to celebrate our wedding day with you. Here are
+            some more details about the event, schedule, and what to expect. We
+            can’t wait to see you there!
           </p>
-        </div>
+        </div> */}
 
         {/* Features Card */}
         <Card className="mt-8 rounded-3xl md:mt-12 lg:mt-20">
@@ -57,18 +60,18 @@ export const Features = () => {
                       src={item.image}
                       alt={`${item.title} interface`}
                       fill
-                      className="object-cover object-left-top ps-4 pt-2"
+                      className="rounded-tl-4xl object-cover object-left-top ps-4 pt-2"
                     />
-                    <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
+                    <div className="from-background absolute inset-0 z-10" />
                   </div>
 
                   <Link
-                    href="#"
+                    href={item.url}
                     className={
                       "group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
                     }
                   >
-                    <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
+                    <h3 className="max-w-60 ps-4 text-2xl leading-tight font-bold tracking-tight">
                       {item.title}
                     </h3>
                     <div className="rounded-full border p-2">

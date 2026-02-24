@@ -7,16 +7,16 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.4855 0.0193 91.7);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.92 0.04 86.47);
+  --primary: oklch(0.9588 0.0127 86.83); /* Alternative Butter Yellow: oklch(0.90 0.12 95) */
   --primary-foreground: oklch(0.31 0.02 86.64);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --muted: oklch(0.9795 0.0098 87.47);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
@@ -53,14 +53,16 @@
 
   --font-dm-sans: "dmSans", sans-serif;
   --font-inter: "inter", sans-serif;
+  --font-script: "Pinyon Script", ui-serif, serif;
+  --font-cormorant: "Cormorant Garamond", ui-serif, serif;
 
   --font-sans: var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* StyleGlide provides a better abstraction for fonts */
-  --display-family: var(--font-sans);
-  --text-family: var(--font-inter);
+  --display-family: var(--font-script);
+  --text-family: var(--font-cormorant);
   --display-weight: 600;
   --text-weight: 400;
 }
@@ -257,10 +259,7 @@
   }
 }
 
-html,
 body {
   scroll-behavior: smooth;
-}
-body {
   position: relative;
 }

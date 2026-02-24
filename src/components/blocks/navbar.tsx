@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ChevronRight, Github } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -21,27 +19,32 @@ import {
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
+  { label: "Our Story", href: "/about" },
+  { label: "Venue", href: "/venue" },
+  { label: "Accommodation", href: "/accommodation" },
+  { label: "Gift", href: "/gift" },
   {
-    label: "Features",
-    href: "#features",
+    label: "Contact",
+    href: "#contact",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "Wedding Planners",
+        href: "/wedding-planners",
         description:
-          "Mainline is built on the habits that make the best product teams successful",
+          "Meet our amazing wedding planners who are making our special day perfect",
       },
       {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
+        title: "Bridesmaids & Bestmen",
+        href: "/people",
+        description: "Get to know our wonderful bridal party and closest friends",
+      },
+      {
+        title: "Nanny Service",
+        href: "/nanny-service",
+        description: "Childcare services available so everyone can enjoy the celebration",
       },
     ],
   },
-  { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -58,13 +61,9 @@ export const Navbar = () => {
     >
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="logo"
-            width={94}
-            height={18}
-            className="dark:invert"
-          />
+          <span className="font-cormorant text-2xl font-bold tracking-wide">
+            P | L
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -73,7 +72,7 @@ export const Navbar = () => {
             {ITEMS.map((link) =>
               link.dropdownItems ? (
                 <NavigationMenuItem key={link.label} className="">
-                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
+                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5 text-base">
                     {link.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -86,7 +85,7 @@ export const Navbar = () => {
                               className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
                             >
                               <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
-                                <div className="text-sm leading-none font-medium">
+                                <div className="text-base leading-none font-medium">
                                   {item.title}
                                 </div>
                                 <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
@@ -105,7 +104,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
+                      "relative bg-transparent px-1.5 text-base font-medium transition-opacity hover:opacity-75",
                       pathname === link.href && "text-muted-foreground",
                     )}
                   >
@@ -117,21 +116,14 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Auth Buttons */}
+        {/* Menu Button */}
         <div className="flex items-center gap-2.5">
-          <ThemeToggle />
-          <Link href="/login" className="max-lg:hidden">
+          {/* <ThemeToggle /> */}
+          <Link href="/menu" className="max-lg:hidden">
             <Button variant="outline">
-              <span className="relative z-10">Login</span>
+              <span className="relative z-10">Select Menu</span>
             </Button>
           </Link>
-          <a
-            href="https://github.com/shadcnblocks/mainline-nextjs-template"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Github className="size-4" />
-            <span className="sr-only">GitHub</span>
-          </a>
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <button
@@ -176,7 +168,7 @@ export const Navbar = () => {
                       openDropdown === link.label ? null : link.label,
                     )
                   }
-                  className="text-primary flex w-full items-center justify-between text-base font-medium"
+                  className="text-primary-foreground flex w-full items-center justify-between text-lg font-medium"
                 >
                   {link.label}
                   <ChevronRight
@@ -206,7 +198,7 @@ export const Navbar = () => {
                         }}
                       >
                         <div className="transition-transform duration-200 group-hover:translate-x-1">
-                          <div className="text-primary font-medium">
+                          <div className="text-primary-foreground text-base font-medium">
                             {item.title}
                           </div>
 
@@ -224,7 +216,7 @@ export const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
+                  "text-primary-foreground hover:text-primary/80 py-4 text-lg font-medium transition-colors first:pt-0 last:pb-0",
                   pathname === link.href && "text-muted-foreground",
                 )}
                 onClick={() => setIsMenuOpen(false)}

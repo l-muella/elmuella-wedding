@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import Marquee from "react-fast-marquee";
 
@@ -10,76 +9,66 @@ type Company = {
   logo: string;
   width: number;
   height: number;
-  href: string;
 };
 
 export const Logos = () => {
   const topRowCompanies = [
     {
-      name: "Mercury",
-      logo: "/logos/mercury.svg",
-      width: 143,
-      height: 26,
-      href: "https://mercury.com",
+      name: "Tile 1",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Watershed",
-      logo: "/logos/watershed.svg",
-      width: 154,
-      height: 31,
-      href: "https://watershed.com",
+      name: "Tile 2",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Retool",
-      logo: "/logos/retool.svg",
-      width: 113,
-      height: 22,
-      href: "https://retool.com",
+      name: "Tile 3",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Descript",
-      logo: "/logos/descript.svg",
-      width: 112,
-      height: 27,
-      href: "https://descript.com",
+      name: "Tile 4",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
   ];
 
   const bottomRowCompanies = [
     {
-      name: "Perplexity",
-      logo: "/logos/perplexity.svg",
-      width: 141,
-      height: 32,
-      href: "https://perplexity.com",
+      name: "Tile 5",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Monzo",
-      logo: "/logos/monzo.svg",
-      width: 104,
-      height: 18,
-      href: "https://monzo.com",
+      name: "Tile 6",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Ramp",
-      logo: "/logos/ramp.svg",
-      width: 105,
-      height: 28,
-      href: "https://ramp.com",
+      name: "Tile 7",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Raycast",
-      logo: "/logos/raycast.svg",
-      width: 128,
-      height: 33,
-      href: "https://raycast.com",
+      name: "Tile 8",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
     {
-      name: "Arc",
-      logo: "/logos/arc.svg",
-      width: 90,
-      height: 28,
-      href: "https://arc.com",
+      name: "Tile 9",
+      logo: "/tiles.svg",
+      width: 150,
+      height: 76,
     },
   ];
 
@@ -87,13 +76,13 @@ export const Logos = () => {
     <section className="pb-28 lg:pb-32 overflow-hidden">
       <div className="container space-y-10 lg:space-y-16">
         <div className="text-center">
-          <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
-            Powering the world's best product teams.
+          <h3 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
+            We can’t imagine this day without you.
             <br className="max-md:hidden" />
             <span className="text-muted-foreground">
-              From next-gen startups to established enterprises.
+              Please join us as we promise each other forever.
             </span>
-          </h2>
+          </h3>
         </div>
 
         <div className="flex w-full flex-col items-center gap-8">
@@ -130,15 +119,15 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
           )}
         >
           {companies.map((company, index) => (
-            <Link href={company.href} target="_blank" key={index}>
+            <div key={index}>
               <Image
                 src={company.logo}
                 alt={`${company.name} logo`}
                 width={company.width}
                 height={company.height}
-                className="dark:opacity/100 object-contain opacity-50 transition-opacity hover:opacity-70 dark:invert"
+                className="dark:opacity/100 object-contain opacity-50 dark:invert"
               />
-            </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -147,11 +136,9 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
       <div className="md:hidden">
         <Marquee direction={direction} pauseOnHover>
           {companies.map((company, index) => (
-            <Link
-              href={company.href}
-              target="_blank"
+            <div
               key={index}
-              className="mx-8 inline-block transition-opacity hover:opacity-70"
+              className="mx-8 inline-block"
             >
               <Image
                 src={company.logo}
@@ -160,7 +147,7 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
                 height={company.height}
                 className="object-contain"
               />
-            </Link>
+            </div>
           ))}
         </Marquee>
       </div>
