@@ -39,7 +39,8 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      menu: "",
+      first: "",
+      main: "",
       intolerances: "",
       privacy: false,
     },
@@ -145,20 +146,71 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="menu"
+          name="first"
           render={({ field }) => {
             const options = [
-              { value: "meat", label: "Meat" },
-              { value: "fish", label: "Fish" },
-              { value: "vegetarian", label: "Vegetarian" },
+              {
+                value: "roast-beef",
+                label: "Roast beef of iberian prey with pine nuts, tartufata and early spinach leaves",
+              },
+              {
+                value: "carpaccio",
+                label: "Carpaccio of vieiras and hazelnut oil with avocado and tender sorrel and mustard leaves",
+              },
+              {
+                value: "caprese",
+                label: "Caprese salad with fresh mozzarella, vine tomatoes and basil with extra virgin olive oil",
+              },
             ];
             return (
               <FormItem className="w-full">
-                <FormLabel>Choose the Menu * </FormLabel>
+                <FormLabel>Choose Your First Course * </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select your menu" />
+                      <SelectValue placeholder="Select your first course" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {options.map(({ label, value }) => (
+                      <SelectItem key={value} value={value}>
+                        {label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+
+        <FormField
+          control={form.control}
+          name="main"
+          render={({ field }) => {
+            const options = [
+              {
+                value: "veal",
+                label: "Tender of veal tender loin with truffle potatoes and grilled mushrooms",
+              },
+              {
+                value: "rodaballo",
+                label: "Rodaballo with noisette potatoes and green asparagus",
+              },
+              {
+                value: "lasagna",
+                label: "Vegetable lasagna with basil and toasted pine nuts",
+              },
+            ];
+            return (
+              <FormItem className="w-full">
+                <FormLabel>Choose Your Main Course * </FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
+                  <FormControl>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select your main course" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

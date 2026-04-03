@@ -19,7 +19,8 @@ export const serverAction = actionClient
           data: {
             Name: parsedInput.name,
             Email: parsedInput.email,
-            Menu: parsedInput.menu,
+            First: parsedInput.first,
+            Main: parsedInput.main,
             Intolerances: parsedInput.intolerances || "None",
             Timestamp: new Date().toISOString(),
           },

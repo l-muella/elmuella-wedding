@@ -11,7 +11,8 @@ export interface ActionResponse<T = unknown> {
 export const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
-  menu: z.string().min(1, "Please select a menu"),
+  first: z.string().min(1, "Please select a first course"),
+  main: z.string().min(1, "Please select a main course"),
   intolerances: z.string().optional(),
   privacy: z.boolean().optional(),
 });

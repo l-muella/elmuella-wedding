@@ -38,7 +38,7 @@ const categories = [
       {
         question: "Is there a welcome event?",
         answer:
-          "Yes! We're hosting a Get Together on Sunday, September 27th at 6:00 PM at Hotel Alfonso XIII in Seville.",
+          "Yes! We're hosting a Get Together on Sunday, September 27th at 3:00 PM at Rooftop Terrace 1912 of Mercer Plaza Sevilla.",
       },
     ],
   },

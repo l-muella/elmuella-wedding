@@ -10,10 +10,10 @@ export const VerticalTimeline = () => {
       events: [
         {
           date: "Sun · 27.09.2026",
-          time: "18:00",
+          time: "15:00",
           title: "Welcome Gathering",
-          location: "Hotel Alfonso XIII",
-          address: "Calle San Fernando, 2, Casco Antiguo, 41004 Sevilla",
+          location: "Rooftop Terrace 1912",
+          address: "Pl. de S. Francisco, 11-12, 41004 Sevilla",
         },
       ],
     },
@@ -26,7 +26,7 @@ export const VerticalTimeline = () => {
           time: "17:00",
           title: "Wedding Ceremony",
           location: "Iglesia del Santo Ángel",
-          address: "Calle Rioja, 23, Casco Antiguo, 41001 Sevilla",
+          address: "Calle Rioja, 23, 41001 Sevilla",
         },
         {
           date: "Mon · 28.09.2026",
@@ -49,7 +49,7 @@ export const VerticalTimeline = () => {
           time: "23:00",
           title: "Party",
           location: "Villa Luisa",
-          address: "Av. Manuel Siurot 1 · Seville",
+          address: "Av. Manuel Siurot, 1, 41013 Sevilla",
         },
       ],
     },

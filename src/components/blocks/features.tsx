@@ -20,7 +20,7 @@ const items = [
   },
   {
     title: "Accommodations",
-    image: "/features/alfonso-xiii.jpg",
+    image: "/features/mercer-placa-sevilla.jpg",
     url: "/accommodation",
   },
 ];

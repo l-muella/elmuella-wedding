@@ -1,84 +1,57 @@
 import { ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const hotels = [
   {
-    name: "Hotel Alfonso XIII",
-    description: "A Luxury Collection Hotel",
-    address: "Calle San Fernando, 2, 41004 Sevilla",
-    distance: "1.2 km from Villa Luisa",
-    email: "reservation.00088@luxurycollection.com",
-    phone: "+34 954 91 70 00",
-    website:
-      "https://www.marriott.com/en-us/hotels/svqlc-hotel-alfonso-xiii-a-luxury-collection-hotel-seville/overview/",
+    name: "Mercer Placer Sevilla",
+    address: "Pl. de S. Francisco, 11-12, 41004 Sevilla",
+    distance: "5 min walk to the church",
+    email: "reservations@mercerhoteles.com",
+    phone: "+34 954 22 12 34",
+    website: "https://www.mercerhoteles.com/en/mercer-plaza-sevilla/",
     features: [
-      "Historic luxury hotel built in 1929",
-      "Located near Plaza de España",
-      "Rooftop terrace with city views",
-      "Outdoor swimming pool",
-      "Fine dining restaurant",
+      "🎉 Pre party on the rooftop terrace",
+      "💑 Wedding couple stays here too",
     ],
-    priceRange: "Luxury",
-  },
-  {
-    name: "AC Hotel Ciudad de Sevilla",
-    description: "by Marriott",
-    address: "Avenida Manuel Siurot, 25, 41013 Sevilla",
-    distance: "Same street as Villa Luisa",
-    email: "csevilla@ac-hotels.com",
-    phone: "+34 954-230 505",
-    website:
-      "https://www.marriott.com/en-us/hotels/svqci-ac-hotel-ciudad-de-sevilla/overview/",
-    features: [
-      "On the same street as the wedding venue",
-      "Rooftop terrace with garden views",
-      "Modern amenities",
-      "Business center",
-      "Fitness center",
-    ],
-    priceRange: "Mid-Range to Upper",
-  },
-  {
-    name: "NH Collection Sevilla",
-    description: "Premium Hotel",
-    address: "Avenida Diego Martínez Barrio, 8, 41013 Sevilla",
-    distance: "1.8 km from Villa Luisa",
-    email: "nhcollectionsevilla@nh-hotels.com",
-    phone: "+34 954 548 500",
-    website: "https://www.nh-hotels.com/hotel/nh-collection-sevilla",
-    features: [
-      "Modern 4-star hotel in Nervión district",
-      "Outdoor swimming pool with terrace",
-      "Wellness center and fitness facilities",
-      "Restaurant and bar on-site",
-      "Close to San Bernardo metro station",
-    ],
-    priceRange: "Premium",
+    priceRange: "Boutique Luxury",
+    promoCode: "P&LWED",
+    promoPercentage: "10%",
   },
   {
     name: "Legado Magdalena Hotel",
-    description: "Boutique Hotel",
     address: "Calle San Pablo, 22, 41001 Sevilla",
-    distance: "2.5 km from Villa Luisa",
+    distance: "4 min walk to the church",
     email: "reservas@legadomagdalena.com",
     phone: "+34 954 22 08 60",
     website: "https://www.booking.com/hotel/es/legado-magdalena.en-gb.html",
-    features: [
-      "4-star boutique hotel in the heart of Seville",
-      "Rooftop saltwater pool with city views",
-      "Stylish modern rooms with Andalusian charm",
-      "Exceptional breakfast included",
-      "24-hour front desk with concierge service",
-    ],
+    features: ["📍 600m distance to the pre party", "💰 Cheaper option"],
     priceRange: "Premium",
+    promoCode: "PALINAANDLUKAS",
+    promoPercentage: "17%",
+  },
+  {
+    name: "Hotel Don Ramón",
+    address: "Calle Trajano, 2, 41001 Sevilla",
+    distance: "5 min walk to the church",
+    email: "reservas@hoteldonramon.com",
+    phone: "+34 954 32 81 50",
+    website: "https://www.hoteldonramon.com/",
+    features: ["📍 700m distance to the pre party", "🏆 World travel award"],
+    priceRange: "Premium",
+    hidePrice: true,
+  },
+  {
+    name: "Hotel Boutique Casa de Colón",
+    address: "Calle Hernando Colón, 3, 41001 Sevilla",
+    distance: "6 min walk to the church",
+    email: "reservas@hotelcasadecolon.com",
+    phone: "+34 955 11 78 28",
+    website: "https://hotelcasadecolon.com/index.php/en/",
+    features: ["📍 Next door to the pre party", "💰 Cheapest option"],
+    priceRange: "Premium",
+    hidePrice: true,
   },
 ];
 
@@ -90,9 +63,6 @@ const Accommodation = () => {
           <Card key={hotel.name} className="flex flex-col">
             <CardHeader>
               <CardTitle className="text-xl">{hotel.name}</CardTitle>
-              <CardDescription className="mt-1">
-                {hotel.description}
-              </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col gap-4">
               <div className="flex items-start gap-2 text-sm">
@@ -137,9 +107,22 @@ const Accommodation = () => {
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <span className="text-muted-foreground text-sm">
-                  Price: {hotel.priceRange}
-                </span>
+                {hotel.promoCode ? (
+                  <div className="flex flex-col">
+                    <span className="text-muted-foreground text-sm font-semibold">
+                      Promo Code{hotel.promoPercentage ? ` (${hotel.promoPercentage})` : ""}:
+                    </span>
+                    <span className="text-foreground text-sm font-bold underline">
+                      {hotel.promoCode}
+                    </span>
+                  </div>
+                ) : hotel.hidePrice ? (
+                  <span className="text-muted-foreground text-sm"></span>
+                ) : (
+                  <span className="text-muted-foreground text-sm">
+                    Price: {hotel.priceRange}
+                  </span>
+                )}
                 <Button size="sm" asChild>
                   <a
                     href={hotel.website}

@@ -27,8 +27,7 @@ export const metadata: Metadata = {
     default: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
     template: "%s - P | L",
   },
-  description:
-    "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
+  description: "All the essential details for our beloved guests.",
   keywords: [
     "Wedding",
     "Seville",
@@ -60,8 +59,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
-    description:
-      "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
+    description: "All the essential details for our beloved guests.",
     siteName: "Palina ∞ Lukas",
     images: [
       {
@@ -75,8 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Palina ∞ Lukas - Wedding on 28.09.2026 in Seville",
-    description:
-      "Palina and Lukas are getting married on September 28, 2026 in Seville! Join us in celebrating our special day with love, laughter, and unforgettable memories.",
+    description: "All the essential details for our beloved guests.",
     images: ["/og-image.jpg"],
     creator: "@ausrobdev",
   },
