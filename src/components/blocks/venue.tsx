@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
+import { FadeIn, SlideIn } from "@/components/animations";
 import { cn } from "@/lib/utils";
-import { SlideIn, FadeIn } from "@/components/animations";
 
 const Venue = () => {
   return (

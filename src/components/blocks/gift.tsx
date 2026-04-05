@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { FadeIn, SlideIn } from "@/components/animations";
 
 const contactInfo = [

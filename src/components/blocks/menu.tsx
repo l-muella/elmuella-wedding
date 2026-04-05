@@ -2,9 +2,9 @@
 
 import React from "react";
 
+import { FadeIn, ScaleIn } from "@/components/animations";
 import { ContactForm } from "@/components/blocks/contact-form";
 import { DashedLine } from "@/components/dashed-line";
-import { FadeIn, ScaleIn } from "@/components/animations";
 
 export default function Menu() {
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { FadeIn, SlideIn } from "@/components/animations";
 
 export const Hero = () => {

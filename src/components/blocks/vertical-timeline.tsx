@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
+import { FadeIn, SlideIn, StaggerChildren, StaggerItem } from "@/components/animations";
 import { Button } from "@/components/ui/button";
-import { FadeIn, StaggerChildren, StaggerItem, SlideIn } from "@/components/animations";
 
 export const VerticalTimeline = () => {
   const timelineGroups = [

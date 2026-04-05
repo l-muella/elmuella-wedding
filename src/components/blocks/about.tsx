@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { FadeIn, SlideIn } from "@/components/animations";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { SlideIn, FadeIn } from "@/components/animations";
 
 const About = () => {
   return (

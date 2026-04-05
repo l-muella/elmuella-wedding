@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { DashedLine } from "../dashed-line";
 
+import { FadeIn, ScaleIn } from "@/components/animations";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -13,7 +14,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { FadeIn, ScaleIn } from "@/components/animations";
 
 const items = [
   {

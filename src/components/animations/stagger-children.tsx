@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
 import { ReactNode, useRef } from "react";
+
+import { motion, useInView } from "motion/react";
 
 interface StaggerChildrenProps {
   children: ReactNode;

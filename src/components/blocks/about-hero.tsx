@@ -1,7 +1,7 @@
 "use client";
 
-import { DashedLine } from "@/components/dashed-line";
 import { FadeIn, SlideIn, StaggerChildren, StaggerItem } from "@/components/animations";
+import { DashedLine } from "@/components/dashed-line";
 
 const stats = [
   {

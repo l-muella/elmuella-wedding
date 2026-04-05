@@ -2,9 +2,9 @@
 
 import { ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 
+import { ScaleIn, StaggerChildren, StaggerItem } from "@/components/animations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FadeIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/animations";
 
 const hotels = [
   {

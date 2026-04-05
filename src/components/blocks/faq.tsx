@@ -1,5 +1,6 @@
 "use client";
 
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations";
 import {
   Accordion,
   AccordionContent,
@@ -7,7 +8,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations";
 
 const categories = [
   {
