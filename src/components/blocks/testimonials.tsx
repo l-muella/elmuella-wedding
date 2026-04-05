@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import { DashedLine } from "../dashed-line";
@@ -11,6 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { FadeIn, ScaleIn } from "@/components/animations";
 
 const items = [
   {
@@ -116,21 +119,23 @@ export const Testimonials = ({
     <>
       <section className={cn("overflow-hidden pt-20 lg:pt-24", className)}>
         <div className="container">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-light tracking-tight md:text-4xl lg:text-5xl">
-              Gallery of Happiness
-            </h2>
-            <p className="text-muted-foreground max-w-md leading-snug">
-              Moments captured throughout our journey together - from our first
-              adventures in Vienna to sunny days in Seville, and all the
-              beautiful memories in between.
-            </p>
-            {/* <Button variant="outline" className="shadow-md">
-              Read our Customer Stories <ArrowRight className="size-4" />
-            </Button> */}
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="space-y-4">
+              <h2 className="text-4xl font-light tracking-tight md:text-4xl lg:text-5xl">
+                Gallery of Happiness
+              </h2>
+              <p className="text-muted-foreground max-w-md leading-snug">
+                Moments captured throughout our journey together - from our first
+                adventures in Vienna to sunny days in Seville, and all the
+                beautiful memories in between.
+              </p>
+              {/* <Button variant="outline" className="shadow-md">
+                Read our Customer Stories <ArrowRight className="size-4" />
+              </Button> */}
+            </div>
+          </FadeIn>
 
-          <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
+          <ScaleIn delay={0.3} className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
             <Carousel
               opts={{
                 align: "start",
@@ -174,7 +179,7 @@ export const Testimonials = ({
                 <CarouselNext className="bg-muted hover:bg-muted/80 static size-14.5 translate-x-0 translate-y-0 transition-colors [&>svg]:size-6 lg:[&>svg]:size-8" />
               </div>
             </Carousel>
-          </div>
+          </ScaleIn>
         </div>
       </section>
       <DashedLine

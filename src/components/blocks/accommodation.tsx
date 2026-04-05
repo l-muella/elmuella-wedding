@@ -1,7 +1,10 @@
+"use client";
+
 import { ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FadeIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/animations";
 
 const hotels = [
   {
@@ -58,9 +61,10 @@ const hotels = [
 const Accommodation = () => {
   return (
     <section className="container mt-10 max-w-7xl md:mt-14 lg:mt-20">
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <StaggerChildren staggerDelay={0.1} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {hotels.map((hotel) => (
-          <Card key={hotel.name} className="flex flex-col">
+          <StaggerItem key={hotel.name}>
+            <Card className="flex flex-col">
             <CardHeader>
               <CardTitle className="text-xl">{hotel.name}</CardTitle>
             </CardHeader>
@@ -137,21 +141,24 @@ const Accommodation = () => {
               </div>
             </CardContent>
           </Card>
+        </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
 
-      <div className="bg-muted/30 mt-12 rounded-lg border p-6 text-center md:p-8">
-        <h3 className="text-2xl font-light md:text-3xl">
-          Booking Recommendations
-        </h3>
-        <p className="text-muted-foreground mx-auto mt-4 max-w-2xl">
-          We recommend booking your accommodation as early as possible.
-          September is a popular time to visit Seville, and hotels tend to fill
-          up quickly. When making your reservation, please mention that you are
-          attending our wedding at Villa Luisa, as some hotels may offer special
-          rates for our guests.
-        </p>
-      </div>
+      <ScaleIn delay={0.5}>
+        <div className="bg-muted/30 mt-12 rounded-lg border p-6 text-center md:p-8">
+          <h3 className="text-2xl font-light md:text-3xl">
+            Booking Recommendations
+          </h3>
+          <p className="text-muted-foreground mx-auto mt-4 max-w-2xl">
+            We recommend booking your accommodation as early as possible.
+            September is a popular time to visit Seville, and hotels tend to fill
+            up quickly. When making your reservation, please mention that you are
+            attending our wedding at Villa Luisa, as some hotels may offer special
+            rates for our guests.
+          </p>
+        </div>
+      </ScaleIn>
     </section>
   );
 };

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations";
 
 const bridesmaids = [
   {
@@ -40,12 +43,14 @@ export function PeopleFaces() {
   return (
     <section className="container max-w-5xl py-12">
       {/* Bridesmaids Section */}
-      <h3 className="text-foreground mb-8 text-center text-4xl font-medium tracking-wide">
-        Bridesmaids
-      </h3>
-      <div className="mb-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      <FadeIn delay={0.1}>
+        <h3 className="text-foreground mb-8 text-center text-4xl font-medium tracking-wide">
+          Bridesmaids
+        </h3>
+      </FadeIn>
+      <StaggerChildren staggerDelay={0.15} className="mb-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         {bridesmaids.map((bridesmaid) => (
-          <div key={bridesmaid.name} className="text-center">
+          <StaggerItem key={bridesmaid.name} className="text-center">
             <Image
               src={bridesmaid.image}
               alt={bridesmaid.name}
@@ -55,17 +60,19 @@ export function PeopleFaces() {
             />
             <h3 className="mt-3 font-semibold">{bridesmaid.name}</h3>
             <p className="text-muted-foreground">{bridesmaid.company}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
 
       {/* Bestmen Section */}
-      <h3 className="text-foreground mb-8 text-center text-4xl font-medium tracking-wide">
-        Bestmen
-      </h3>
-      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      <FadeIn delay={0.2}>
+        <h3 className="text-foreground mb-8 text-center text-4xl font-medium tracking-wide">
+          Bestmen
+        </h3>
+      </FadeIn>
+      <StaggerChildren staggerDelay={0.15} className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
         {bestmen.map((person) => (
-          <div key={person.name} className="text-center">
+          <StaggerItem key={person.name} className="text-center">
             <Image
               src={person.image}
               alt={person.name}
@@ -75,9 +82,9 @@ export function PeopleFaces() {
             />
             <h3 className="mt-3 font-semibold">{person.name}</h3>
             <p className="text-muted-foreground">{person.company}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
     </section>
   );
 }

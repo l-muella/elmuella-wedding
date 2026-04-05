@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -5,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations";
 
 const categories = [
   {
@@ -117,7 +120,7 @@ export const FAQ = ({
     <section className={cn("py-20 lg:py-20", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
-          <div className="space-y-4">
+          <FadeIn className="space-y-4">
             {headerTag === "h1" ? (
               <h1 className="text-4xl font-light tracking-tight md:text-4xl lg:text-5xl">
                 Any Questions?
@@ -131,11 +134,11 @@ export const FAQ = ({
               To make things easier, we’ve gathered answers to the most common
               questions right here.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid gap-6 text-start">
+          <StaggerChildren staggerDelay={0.1} className="grid gap-6 text-start">
             {categories.map((category, categoryIndex) => (
-              <div key={category.title} className="">
+              <StaggerItem key={category.title} className="">
                 <h3 className="text-muted-foreground border-b py-4 text-xl font-bold">
                   {category.title}
                 </h3>
@@ -151,9 +154,9 @@ export const FAQ = ({
                     </AccordionItem>
                   ))}
                 </Accordion>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </div>
     </section>

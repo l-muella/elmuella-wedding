@@ -9,7 +9,7 @@ export function Footer() {
   const pathname = usePathname();
   const isMenuPage = pathname === "/menu";
   const navigation = [
-    { name: "Our Story", href: "/#feature-modern-teams" },
+    { name: "Our Story", href: "/about" },
     { name: "Venue", href: "/venue" },
     { name: "Accommodation", href: "/accommodation" },
     { name: "Gift", href: "/gift" },
