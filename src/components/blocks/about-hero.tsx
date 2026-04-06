@@ -79,7 +79,7 @@ export function AboutHero() {
             orientation="horizontal"
             className="absolute top-0 lg:hidden"
           />
-          <StaggerChildren staggerDelay={0.1}>
+          <StaggerChildren staggerDelay={0.1} className="flex flex-col gap-6">
             {stats.map((stat) => (
               <StaggerItem key={stat.label} className="flex flex-col gap-1">
                 <div className="font-display text-4xl font-light tracking-wide md:text-5xl">

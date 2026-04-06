@@ -75,7 +75,7 @@ export function VenueHero() {
             orientation="horizontal"
             className="absolute top-0 lg:hidden"
           />
-          <StaggerChildren staggerDelay={0.1}>
+          <StaggerChildren staggerDelay={0.1} className="flex flex-col gap-6">
             {contactDetails.map((detail) => {
               const Icon = detail.icon;
               return (
