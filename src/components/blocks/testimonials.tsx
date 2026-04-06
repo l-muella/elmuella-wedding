@@ -49,7 +49,7 @@ const items = [
   {
     quote: "Living the Vienna life, dancing at the balls.",
     city: "Vienna",
-    image: "/testimonials/ball.jpg",
+    image: "/testimonials/vienna-ball.jpg",
   },
   {
     quote: "Learning kite-surfing on our yacht adventure in Egypt.",
@@ -125,8 +125,8 @@ export const Testimonials = ({
                 Gallery of Happiness
               </h2>
               <p className="text-muted-foreground max-w-md leading-snug">
-                Moments captured throughout our journey together - from our first
-                adventures in Vienna to sunny days in Seville, and all the
+                Moments captured throughout our journey together - from our
+                first adventures in Vienna to sunny days in Seville, and all the
                 beautiful memories in between.
               </p>
               {/* <Button variant="outline" className="shadow-md">
@@ -135,7 +135,10 @@ export const Testimonials = ({
             </div>
           </FadeIn>
 
-          <ScaleIn delay={0.3} className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16">
+          <ScaleIn
+            delay={0.3}
+            className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-16"
+          >
             <Carousel
               opts={{
                 align: "start",
