@@ -20,7 +20,7 @@ const hotels = [
     ],
     priceRange: "Boutique Luxury",
     promoCode: "P&LWED",
-    promoPercentage: "10%",
+    promoPercentage: "-10%",
   },
   {
     name: "Legado Magdalena Hotel",
@@ -32,7 +32,7 @@ const hotels = [
     features: ["📍 600m distance to the pre party", "💰 Cheaper option"],
     priceRange: "Premium",
     promoCode: "PALINAANDLUKAS",
-    promoPercentage: "17%",
+    promoPercentage: "-17%",
   },
   {
     name: "Hotel Don Ramón",
@@ -61,87 +61,94 @@ const hotels = [
 const Accommodation = () => {
   return (
     <section className="container mt-10 max-w-7xl md:mt-14 lg:mt-20">
-      <StaggerChildren staggerDelay={0.1} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <StaggerChildren
+        staggerDelay={0.1}
+        className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+      >
         {hotels.map((hotel) => (
           <StaggerItem key={hotel.name}>
             <Card className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-xl">{hotel.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-1 flex-col gap-4">
-              <div className="flex items-start gap-2 text-sm">
-                <MapPin className="text-primary-foreground mt-0.5 size-4 shrink-0" />
-                <div className="flex-1">
-                  <p className="font-medium">{hotel.distance}</p>
-                  <p className="text-muted-foreground">{hotel.address}</p>
-                </div>
-              </div>
-
-              <div>
-                <p className="mb-2 text-sm font-medium">Features:</p>
-                <ul className="text-muted-foreground space-y-1 text-sm">
-                  {hotel.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-primary-foreground">•</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-auto space-y-2">
-                <div className="flex items-center gap-2 text-sm">
-                  <Mail className="text-primary-foreground size-4 shrink-0" />
-                  <a
-                    href={`mailto:${hotel.email}`}
-                    className="hover:text-primary truncate"
-                  >
-                    {hotel.email}
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Phone className="text-primary-foreground size-4 shrink-0" />
-                  <a
-                    href={`tel:${hotel.phone.replace(/\s/g, "")}`}
-                    className="hover:text-primary"
-                  >
-                    {hotel.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between pt-2">
-                {hotel.promoCode ? (
-                  <div className="flex flex-col">
-                    <span className="text-muted-foreground text-sm font-semibold">
-                      Promo Code{hotel.promoPercentage ? ` (${hotel.promoPercentage})` : ""}:
-                    </span>
-                    <span className="text-foreground text-sm font-bold underline">
-                      {hotel.promoCode}
-                    </span>
+              <CardHeader>
+                <CardTitle className="text-xl">{hotel.name}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-1 flex-col gap-4">
+                <div className="flex items-start gap-2 text-sm">
+                  <MapPin className="text-primary-foreground mt-0.5 size-4 shrink-0" />
+                  <div className="flex-1">
+                    <p className="font-medium">{hotel.distance}</p>
+                    <p className="text-muted-foreground">{hotel.address}</p>
                   </div>
-                ) : hotel.hidePrice ? (
-                  <span className="text-muted-foreground text-sm"></span>
-                ) : (
-                  <span className="text-muted-foreground text-sm">
-                    Price: {hotel.priceRange}
-                  </span>
-                )}
-                <Button size="sm" asChild>
-                  <a
-                    href={hotel.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="gap-1"
-                  >
-                    Book Now
-                    <ExternalLink className="size-4" />
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </StaggerItem>
+                </div>
+
+                <div>
+                  <p className="mb-2 text-sm font-medium">Features:</p>
+                  <ul className="text-muted-foreground space-y-1 text-sm">
+                    {hotel.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-primary-foreground">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Mail className="text-primary-foreground size-4 shrink-0" />
+                    <a
+                      href={`mailto:${hotel.email}`}
+                      className="hover:text-primary truncate"
+                    >
+                      {hotel.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Phone className="text-primary-foreground size-4 shrink-0" />
+                    <a
+                      href={`tel:${hotel.phone.replace(/\s/g, "")}`}
+                      className="hover:text-primary"
+                    >
+                      {hotel.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  {hotel.promoCode ? (
+                    <div className="flex flex-col">
+                      <span className="text-muted-foreground text-sm font-semibold">
+                        Promo Code
+                        {hotel.promoPercentage
+                          ? ` (${hotel.promoPercentage})`
+                          : ""}
+                        :
+                      </span>
+                      <span className="text-foreground text-sm font-bold underline">
+                        {hotel.promoCode}
+                      </span>
+                    </div>
+                  ) : hotel.hidePrice ? (
+                    <span className="text-muted-foreground h-[2.8em] text-sm"></span>
+                  ) : (
+                    <span className="text-muted-foreground text-sm">
+                      Price: {hotel.priceRange}
+                    </span>
+                  )}
+                  <Button size="sm" asChild>
+                    <a
+                      href={hotel.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gap-1"
+                    >
+                      Book Now
+                      <ExternalLink className="size-4" />
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
         ))}
       </StaggerChildren>
 
@@ -152,10 +159,9 @@ const Accommodation = () => {
           </h3>
           <p className="text-muted-foreground mx-auto mt-4 max-w-2xl">
             We recommend booking your accommodation as early as possible.
-            September is a popular time to visit Seville, and hotels tend to fill
-            up quickly. When making your reservation, please mention that you are
-            attending our wedding at Villa Luisa, as some hotels may offer special
-            rates for our guests.
+            September is a popular time to visit Seville, and hotels tend to
+            fill up quickly. When making your reservation, please mention the
+            dedicated promo code provided above to receive a discount.
           </p>
         </div>
       </ScaleIn>
